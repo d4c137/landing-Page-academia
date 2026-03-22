@@ -24,4 +24,4 @@ Atualmente, o repositório foca na entrega da página inicial:
 > **Nota:** Os módulos internos e lógicas de backend sensíveis estão em ambiente privado para garantir a segurança da regra de negócio.
 
 ---
-Módulo de demonstração técnica. Desenvolvido por [Seu Nome].
+Módulo de demonstração técnica. Desenvolvido por dante alighieri.
