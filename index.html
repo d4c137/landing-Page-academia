@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia | Seu melhor shape começa aqui!</title>
+    <!-- Bootstrap 5 CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Estilos principais */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .price-card {
+            transition: transform 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card {
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            background-color: #f8f9fa;
+        }
+
+        /* Estilo para página de manutenção (sobreposição completa) */
+        .maintenance-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .maintenance-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+            max-width: 550px;
+            width: 90%;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .maintenance-card:hover {
+            transform: scale(1.02);
+        }
+
+        .maintenance-icon {
+            font-size: 4.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .btn-home {
+            background-color: #0d6efd;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-home:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+        }
+
+        /* Efeito para links de navegação simulando página */
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        [data-page] {
+            cursor: pointer;
+        }
+
+        /* Transição suave ao trocar conteúdo (opcional) */
+        .page-transition {
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #ffc107 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======================== PÁGINA PRINCIPAL (ACADEMIA) ======================== -->
+    <div id="mainPage">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#" data-page="home">
+                    <i class="bi bi-activity"></i> PowerFit
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-page="home">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="precos">Preços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="produtos">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="contato">Contato</a>
+                        </li>
+                    </ul>
+                    <a href="#" data-page="precos" class="btn btn-primary ms-lg-3">Matricule-se</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section text-center" id="inicio">
+            <div class="container">
+                <h1 class="display-3 fw-bold mb-4">TRANSFORME SEU CORPO <br> EM NOSSA ACADEMIA</h1>
+                <p class="lead mb-5">Equipamentos modernos, professores qualificados e o melhor ambiente para você<br>
+                    alcançar seus objetivos fitness.</p>
+                <div>
+                    <a href="#" data-page="precos" class="btn btn-primary btn-lg px-4 me-3">Planos</a>
+                    <a href="#" data-page="sobre" class="btn btn-outline-light btn-lg px-4">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-5" id="sobre">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Sobre a PowerFit</h2>
+                        <p class="lead mb-4">A PowerFit nasceu da paixão pelo fitness e pela transformação física e
+                            mental que a atividade proporciona.</p>
+                        <p>Com mais de 10 anos no mercado, nossa academia foi projetada para oferecer a melhor
+                            experiência em treinamento físico, com equipamentos de última geração, professores altamente
+                            qualificados e um ambiente acolhedor que motiva você a superar seus limites.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="me-3 text-primary">
+                                        <i class="bi bi-check-circle-fill fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Equipamentos Modernos</h5>
+                                        <p class="mb-0">Máquinas importadas e manutenção constante</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="me-3 text-primary">
+                                        <i class="bi bi-check-circle-fill fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Professores Certificados</h5>
+                                        <p class="mb-0">Profissionais com formação internacional</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                            alt="Academia PowerFit" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Nossos Diferenciais</h2>
+                    <p class="lead">Tudo que você precisa para alcançar seus objetivos</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 bg-white shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 mx-auto"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="bi bi-people fs-3 text-primary"></i>
+                                </div>
+                                <h5>Aulas Coletivas</h5>
+                                <p>Zumba, Spinning, CrossFit, Muay Thai e muito mais com professores especializados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 bg-white shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 mx-auto"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="bi bi-heart-pulse fs-3 text-primary"></i>
+                                </div>
+                                <h5>Avaliação Física</h5>
+                                <p>Acompanhamento completo com bioimpedância e avaliação periódica de resultados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 bg-white shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-3 mx-auto"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="bi bi-shop fs-3 text-primary"></i>
+                                </div>
+                                <h5>Loja de Suplementos</h5>
+                                <p>Loja equipada com os melhores suplementos e assessórios com preços especiais para
+                                    alunos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-5" id="precos">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Nossos Planos</h2>
+                    <p class="lead">Escolha o plano que melhor se adapta aos seus objetivos</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card price-card h-100 border-0 shadow">
+                            <div class="card-header bg-primary text-white text-center py-3">
+                                <h4 class="my-0 fw-normal">Básico</h4>
+                            </div>
+                            <div class="card-body text-center">
+                                <h1 class="card-title pricing-card-title">R$99<small
+                                        class="text-muted fw-light">/mês</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li><i class="bi bi-check text-success"></i> Acesso à academia</li>
+                                    <li><i class="bi bi-check text-success"></i> 1 avaliação física</li>
+                                    <li><i class="bi bi-x text-danger"></i> Aulas coletivas</li>
+                                    <li><i class="bi bi-x text-danger"></i> Personal trainer</li>
+                                    <li><i class="bi bi-x text-danger"></i> Desconto em produtos</li>
+                                </ul>
+                                <a href="#" data-page="precos"
+                                    class="w-100 btn btn-lg btn-outline-primary btn-assinar">Assinar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card price-card h-100 border-0 shadow-lg">
+                            <div class="card-header bg-danger text-white text-center py-3">
+                                <h4 class="my-0 fw-normal">Premium</h4>
+                            </div>
+                            <div class="card-body text-center">
+                                <h1 class="card-title pricing-card-title">R$149<small
+                                        class="text-muted fw-light">/mês</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li><i class="bi bi-check text-success"></i> Acesso ilimitado</li>
+                                    <li><i class="bi bi-check text-success"></i> 4 avaliações físicas</li>
+                                    <li><i class="bi bi-check text-success"></i> Todas aulas coletivas</li>
+                                    <li><i class="bi bi-check text-success"></i> 10% desconto produtos</li>
+                                    <li><i class="bi bi-x text-danger"></i> Personal trainer</li>
+                                </ul>
+                                <a href="#" data-page="precos" class="w-100 btn btn-lg btn-danger btn-assinar">Assinar
+                                    agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card price-card h-100 border-0 shadow">
+                            <div class="card-header bg-primary text-white text-center py-3">
+                                <h4 class="my-0 fw-normal">VIP</h4>
+                            </div>
+                            <div class="card-body text-center">
+                                <h1 class="card-title pricing-card-title">R$299<small
+                                        class="text-muted fw-light">/mês</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li><i class="bi bi-check text-success"></i> Acesso ilimitado</li>
+                                    <li><i class="bi bi-check text-success"></i> Avaliação mensal</li>
+                                    <li><i class="bi bi-check text-success"></i> Todas aulas coletivas</li>
+                                    <li><i class="bi bi-check text-success"></i> Personal trainer 1x/semana</li>
+                                    <li><i class="bi bi-check text-success"></i> 20% desconto produtos</li>
+                                </ul>
+                                <a href="#" data-page="precos" class="w-100 btn btn-lg btn-primary btn-assinar">Assinar
+                                    agora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <p>Todos os planos incluem WiFi grátis e estacionamento. Não cobramos taxa de matrícula!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section (original com abas e produtos) -->
+        <section class="py-5 bg-light" id="produtos">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Nossos Produtos</h2>
+                    <p class="lead">Suplementos e acessórios para potencializar seu treino</p>
+                </div>
+                <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="suplementos-tab" data-bs-toggle="tab"
+                            data-bs-target="#suplementos" type="button" role="tab">Suplementos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="acessorios-tab" data-bs-toggle="tab" data-bs-target="#acessorios"
+                            type="button" role="tab">Acessórios</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="suplementos" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card product-card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465cacea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80"
+                                        class="card-img-top" alt="Whey Protein">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Whey Protein Premium</h5>
+                                        <p class="card-text">Proteína isolada de alta qualidade para recuperação
+                                            muscular pós-treino.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">R$ 129,90</span>
+                                            <button
+                                                class="btn btn-sm btn-outline-primary btn-comprar-produto">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card product-card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1625772452859-1c18365b9ef1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                        class="card-img-top" alt="BCAA">
+                                    <div class="card-body">
+                                        <h5 class="card-title">BCAA Aminoácidos</h5>
+                                        <p class="card-text">Combinação essencial de aminoácidos para ganho de massa
+                                            muscular.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">R$ 79,90</span>
+                                            <button
+                                                class="btn btn-sm btn-outline-primary btn-comprar-produto">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card product-card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                        class="card-img-top" alt="Pré-treino">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pré-Treino Explosivo</h5>
+                                        <p class="card-text">Aumente sua energia e desempenho nos treinos com essa
+                                            fórmula poderosa.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">R$ 89,90</span>
+                                            <button
+                                                class="btn btn-sm btn-outline-primary btn-comprar-produto">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="acessorios" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card product-card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1623874514711-0f321325f318?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                        class="card-img-top" alt="Luva de treino">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Luva de Treino</h5>
+                                        <p class="card-text">Proteção e aderência para suas mãos durante os exercícios.
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">R$ 59,90</span>
+                                            <button
+                                                class="btn btn-sm btn-outline-primary btn-comprar-produto">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card product-card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                        class="card-img-top" alt="Garrafa térmica">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Garrafa Térmica 750ml</h5>
+                                        <p class="card-text">Mantenha sua água gelada por até 24 horas durante os
+                                            treinos.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">R$ 69,90</span>
+                                            <button
+                                                class="btn btn-sm btn-outline-primary btn-comprar-produto">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card product-card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1595079835353-a6de8e09029c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                        class="card-img-top" alt="Corda de pular">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Corda de Pular Profissional</h5>
+                                        <p class="card-text">Excelente para cardio, com contador digital de giros.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">R$ 49,90</span>
+                                            <button
+                                                class="btn btn-sm btn-outline-primary btn-comprar-produto">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-primary" id="verTodosProdutosBtn">Ver todos os produtos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">O que nossos alunos dizem</h2>
+                    <p class="lead">Acompanhe as transformações realizadas na PowerFit</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 testimonial-card border-0 p-4">
+                            <div class="d-flex mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3"
+                                    width="60" height="60" alt="Cliente">
+                                <div>
+                                    <h5 class="mb-1">Ana Silva</h5>
+                                    <div class="text-warning mb-1">★★★★★</div>
+                                </div>
+                            </div>
+                            <p>"Depois de 6 meses na PowerFit, consegui perder 12kg e hoje me sinto muito mais disposta.
+                                Os professores são incríveis e o ambiente é muito motivador!"</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 testimonial-card border-0 p-4">
+                            <div class="d-flex mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3"
+                                    width="60" height="60" alt="Cliente">
+                                <div>
+                                    <h5 class="mb-1">Carlos Oliveira</h5>
+                                    <div class="text-warning mb-1">★★★★☆</div>
+                                </div>
+                            </div>
+                            <p>"A estrutura da academia é sensacional e os equipamentos são de primeira linha. Em 1 ano
+                                ganhei 8kg de massa muscular com acompanhamento dos profissionais."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 testimonial-card border-0 p-4">
+                            <div class="d-flex mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3"
+                                    width="60" height="60" alt="Cliente">
+                                <div>
+                                    <h5 class="mb-1">Juliana Santos</h5>
+                                    <div class="text-warning mb-1">★★★★★</div>
+                                </div>
+                            </div>
+                            <p>"As aulas coletivas são fantásticas! Faço spinning todos os dias e já melhorei muito meu
+                                condicionamento. Além disso, os suplementos da loja ajudaram muito nos resultados."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-5 bg-light" id="contato">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Entre em Contato</h2>
+                        <p class="lead mb-4">Tem dúvidas ou quer agendar uma visita? Mande uma mensagem!</p>
+                        <div class="mb-4">
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-primary"><i class="bi bi-telephone fs-4"></i></div>
+                                <div>
+                                    <h5>Telefone</h5>
+                                    <p class="mb-0">(11) 1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-primary"><i class="bi bi-envelope fs-4"></i></div>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p class="mb-0">contato@powerfit.com.br</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-primary"><i class="bi bi-geo-alt fs-4"></i></div>
+                                <div>
+                                    <h5>Endereço</h5>
+                                    <p class="mb-0">Av. Paulista, 1000 - São Paulo, SP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex"><a href="#" class="me-3 text-dark"><i class="bi bi-facebook fs-3"></i></a><a
+                                href="#" class="me-3 text-dark"><i class="bi bi-instagram fs-3"></i></a><a href="#"
+                                class="me-3 text-dark"><i class="bi bi-whatsapp fs-3"></i></a><a href="#"
+                                class="me-3 text-dark"><i class="bi bi-youtube fs-3"></i></a></div>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-4">Envie uma mensagem</h3>
+                                <form id="contactForm">
+                                    <div class="mb-3"><label class="form-label">Seu nome</label><input type="text"
+                                            class="form-control" id="nome"></div>
+                                    <div class="mb-3"><label class="form-label">Email</label><input type="email"
+                                            class="form-control" id="email"></div>
+                                    <div class="mb-3"><label class="form-label">Telefone</label><input type="tel"
+                                            class="form-control" id="telefone"></div>
+                                    <div class="mb-3"><label class="form-label">Mensagem</label><textarea
+                                            class="form-control" rows="4"></textarea></div><button type="submit"
+                                        class="btn btn-primary">Enviar mensagem</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <div class="container-fluid p-0"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.376415272535!2d-46.65684492456597!3d-23.56150977880663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59cdc27f6ce3%3A0x9841ee6a5b8f2983!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1690998484042!5m2!1spt-BR!2sbr"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h4 class="mb-3"><i class="bi bi-activity"></i> PowerFit</h4>
+                        <p>Sua jornada fitness começa aqui. Oferecemos a melhor estrutura, professores qualificados e
+                            produtos exclusivos para potencializar seus resultados.</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-3">Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" data-page="home"
+                                    class="text-white text-decoration-none">Início</a></li>
+                            <li class="mb-2"><a href="#" data-page="sobre"
+                                    class="text-white text-decoration-none">Sobre</a></li>
+                            <li class="mb-2"><a href="#" data-page="precos"
+                                    class="text-white text-decoration-none">Preços</a></li>
+                            <li class="mb-2"><a href="#" data-page="produtos"
+                                    class="text-white text-decoration-none">Produtos</a></li>
+                            <li class="mb-2"><a href="#" data-page="contato"
+                                    class="text-white text-decoration-none">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-3">Horários</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Segunda a Sexta: 6h às 23h</li>
+                            <li class="mb-2">Sábados: 8h às 20h</li>
+                            <li class="mb-2">Domingos: 9h às 15h</li>
+                            <li class="mb-2">Feriados: 9h às 13h</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h5 class="mb-3">Newsletter</h5>
+                        <p>Assine e receba dicas exclusivas e promoções.</p>
+                        <form>
+                            <div class="input-group mb-3"><input type="email" class="form-control"
+                                    placeholder="Seu email"><button class="btn btn-primary" type="button"><i
+                                        class="bi bi-envelope"></i></button></div>
+                        </form>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="text-center">
+                    <p class="mb-0">© 2023 PowerFit Academia. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ======================== PÁGINA DE MANUTENÇÃO (Loja / Módulo em obras) ======================== -->
+    <div id="maintenancePage" style="display: none;">
+        <div class="maintenance-page">
+            <div class="maintenance-card">
+                <div class="maintenance-icon">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <h1 class="display-5 fw-bold mb-3">🏗️ Estamos em obras!</h1>
+                <p class="lead mb-4">O módulo de <strong class="text-primary">Loja / Produtos</strong> está sendo
+                    preparado para oferecer a melhor experiência.</p>
+                <p class="mb-4 text-secondary">Em breve você poderá comprar suplementos, acessórios e aproveitar
+                    descontos exclusivos. Agradecemos a compreensão!</p>
+                <a href="#" id="backToHomeBtn" class="btn btn-primary btn-home px-4 py-2">
+                    <i class="bi bi-arrow-left me-2"></i>Voltar para o Início
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            // Referências dos containers
+            const mainPage = document.getElementById('mainPage');
+            const maintenancePage = document.getElementById('maintenancePage');
+
+            // Função para mostrar página principal e esconder manutenção
+            function showMainPage() {
+                mainPage.style.display = 'block';
+                maintenancePage.style.display = 'none';
+                // Atualizar URL sem recarregar (opcional, apenas estético)
+                history.pushState(null, '', '#home');
+                // Rolar para o topo para melhor experiência
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Função para mostrar página de manutenção (Loja / Módulo em obras)
+            function showMaintenancePage() {
+                mainPage.style.display = 'none';
+                maintenancePage.style.display = 'flex';
+                // Atualizar hash para manter contexto
+                history.pushState(null, '', '#manutencao');
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            }
+
+            // Evento para voltar ao início pelo botão da manutenção
+            const backBtn = document.getElementById('backToHomeBtn');
+            if (backBtn) {
+                backBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showMainPage();
+                });
+            }
+
+            // Capturar todos os links que devem levar à manutenção (Loja/Produtos)
+            // 1) Botões "Adicionar" nos produtos (qualquer botão com classe btn-comprar-produto)
+            const buyButtons = document.querySelectorAll('.btn-comprar-produto');
+            buyButtons.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showMaintenancePage();
+                });
+            });
+
+            // 2) Botão "Ver todos os produtos" na seção de produtos
+            const verTodosBtn = document.getElementById('verTodosProdutosBtn');
+            if (verTodosBtn) {
+                verTodosBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showMaintenancePage();
+                });
+            }
+
+            // 3) Links do navbar que apontam para "Produtos" (data-page="produtos")
+            const produtosNavLinks = document.querySelectorAll('[data-page="produtos"]');
+            produtosNavLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showMaintenancePage();
+                });
+            });
+
+            // 4) Links no footer que apontam para "Produtos"
+            const footerProdLinks = document.querySelectorAll('footer a[data-page="produtos"]');
+            footerProdLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showMaintenancePage();
+                });
+            });
+
+            // 5) Para os botões "Assinar agora" dos planos, vamos manter como alerta (ou redirecionar para home)
+            // Conforme solicitado apenas a loja deve mostrar manutenção; planos ficam como aviso simples (já que não há backend)
+            const assinarBtns = document.querySelectorAll('.btn-assinar');
+            assinarBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('📢 Módulo de matrícula em desenvolvimento. Em breve você poderá assinar online!');
+                });
+            });
+
+            // Para o formulário de contato: exibir alerta amigável
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Mensagem enviada com sucesso! (Simulação) Em breve retornaremos seu contato.');
+                    contactForm.reset();
+                });
+            }
+
+            // Para o formulário de newsletter do footer
+            const newsletterForm = document.querySelector('footer .input-group button');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('click', function (e) {
+                    const emailInput = document.querySelector('footer .input-group input');
+                    if (emailInput && emailInput.value.trim() !== '') {
+                        alert(`Obrigado por assinar nossa newsletter! Enviaremos novidades para ${emailInput.value}`);
+                        emailInput.value = '';
+                    } else {
+                        alert('Por favor, insira um e-mail válido.');
+                    }
+                });
+            }
+
+            // Navegação entre seções (scroll suave) para os links que não são da loja (home, sobre, preços, contato)
+            // Para não interferir com a manutenção, esses devem rolar normalmente.
+            const scrollLinks = document.querySelectorAll('[data-page="home"], [data-page="sobre"], [data-page="precos"], [data-page="contato"]');
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    let targetId = '';
+                    if (page === 'home') targetId = 'inicio';
+                    else if (page === 'sobre') targetId = 'sobre';
+                    else if (page === 'precos') targetId = 'precos';
+                    else if (page === 'contato') targetId = 'contato';
+
+                    if (targetId) {
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                            // Atualizar ativo na navbar (pequeno detalhe)
+                            document.querySelectorAll('.navbar-nav .nav-link').forEach(nav => nav.classList.remove('active'));
+                            if (link.classList.contains('nav-link')) link.classList.add('active');
+                        }
+                    }
+                    // Garantir que estamos na página principal
+                    showMainPage();
+                });
+            });
+
+            // Ajuste adicional: qualquer clique no logo ou brand leva para home
+            const brandLink = document.querySelector('.navbar-brand');
+            if (brandLink) {
+                brandLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showMainPage();
+                    document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            // Caso o usuário clique em "Matricule-se" (botão na navbar)
+            const matriculaBtn = document.querySelector('a.btn-primary.ms-lg-3');
+            if (matriculaBtn) {
+                matriculaBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const precosSection = document.getElementById('precos');
+                    if (precosSection) {
+                        precosSection.scrollIntoView({ behavior: 'smooth' });
+                        showMainPage();
+                    }
+                });
+            }
+
+            // Inicialmente garantir que a página principal está visível e manutenção oculta
+            showMainPage();
+
+            // Suporte a navegação por hash (caso alguém acesse #manutencao diretamente)
+            if (window.location.hash === '#manutencao') {
+                showMaintenancePage();
+            }
+        })();
+    </script>
+</body>
+
+</html>
